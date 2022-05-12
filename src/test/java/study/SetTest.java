@@ -33,7 +33,7 @@ public class SetTest {
     @DisplayName("Set : 포함된 원소의 개수에 대한 검증")
     public void setTest() {
         // When & Then
-        assertThat(numbers).size().as("Set의 크기가 3인지 여부를 검증").isEqualTo(3);
+        assertThat(numbers).hasSize(3);
     }
 
     @ParameterizedTest
@@ -50,11 +50,11 @@ public class SetTest {
     @ParameterizedTest
     @DisplayName("Set : 요소 포함/미포함 여부 검증")
     @CsvSource(value = {"1:true", "2:true", "3:true", "4:false", "5:false"}, delimiterString = ":")
-    public void setParameterTest(String given, String expected) {
+    public void setParameterTest(int given, boolean expected) {
         // Given
-        boolean actual = numbers.contains(Integer.parseInt(given));
+        boolean actual = numbers.contains(given);
 
         // When & Then
-        assertThat(actual).isEqualTo(Boolean.parseBoolean(expected));
+        assertThat(actual).isEqualTo(expected);
     }
 }

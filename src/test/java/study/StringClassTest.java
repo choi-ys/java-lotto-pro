@@ -5,8 +5,6 @@ import static org.assertj.core.api.Assertions.assertThatExceptionOfType;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.junit.jupiter.api.Assertions.assertAll;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.stream.Stream;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -29,8 +27,6 @@ public class StringClassTest {
         // When
         final String delimiter = ",";
         final String[] actual = given.split(delimiter);
-
-        BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
         // Then
         assertAll(
