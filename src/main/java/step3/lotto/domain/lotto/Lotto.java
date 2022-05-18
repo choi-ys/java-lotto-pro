@@ -67,26 +67,26 @@ public class Lotto {
 
     private boolean contains(LottoNumber answerLottoNumber) {
         Set<Boolean> compareEqualsSet = new HashSet();
-        for (LottoNumber lottoNumber : this.lottoNumbers) {
+        for (LottoNumber lottoNumber : lottoNumbers) {
             compareEqualsSet.add(lottoNumber.equals(answerLottoNumber));
         }
         return compareEqualsSet.contains(true);
     }
 
     private static void validateLottoNumberCount(int size) {
-        if (!isValidLottoCount(size)) {
+        if (isInvalidLottoCount(size)) {
             throw new IllegalArgumentException(INVALID_LOTTO_NUMBER_COUNT_ERROR);
         }
     }
 
     private static void validateLottoNumberDuplication(int size) {
-        if (!isValidLottoCount(size)) {
+        if (isInvalidLottoCount(size)) {
             throw new IllegalArgumentException(LOTTO_NUMBER_DUPLICATED_ERROR);
         }
     }
 
-    private static boolean isValidLottoCount(int size) {
-        return size == LOTTO_NUMBER_COUNT;
+    private static boolean isInvalidLottoCount(int size) {
+        return size != LOTTO_NUMBER_COUNT;
     }
 
     @Override

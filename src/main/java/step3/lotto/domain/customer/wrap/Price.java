@@ -39,6 +39,6 @@ public class Price {
     }
 
     public int calculateTryCount() {
-        return this.price / MINIMUM_LOTTO_PRICE;
+        return price / MINIMUM_LOTTO_PRICE;
     }
 }
