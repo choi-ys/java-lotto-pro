@@ -1,5 +1,6 @@
 package step3.lotto.domain.lotto;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -15,7 +16,7 @@ public class Lottos {
     }
 
     public List<Lotto> getLottos() {
-        return lottos;
+        return new ArrayList<>(lottos);
     }
 
     public int getLottosSize() {
@@ -23,12 +24,6 @@ public class Lottos {
     }
 
     public void addAll(Lottos lottos) {
-        for (Lotto lotto : lottos.getLottos()) {
-            add(lotto);
-        }
-    }
-
-    private void add(Lotto lotto) {
-        lottos.add(lotto);
+        this.lottos.addAll(lottos.getLottos());
     }
 }
