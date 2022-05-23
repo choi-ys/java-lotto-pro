@@ -25,6 +25,13 @@ class LottoNumberTest {
     }
 
     @Test
+    @DisplayName("Heap 영역에 미리 생성한 LottoNumber 객체의 동일성 검증")
+    public void createdLottoNumberIdentityEqualsTest() {
+        // When & Then
+        assertThat(LottoNumber.of(1)).isEqualTo(LottoNumber.of(1));
+    }
+
+    @Test
     @DisplayName("단일 로또 번호 객체의 일치 여부 판별")
     public void equalsTest() {
         // Given

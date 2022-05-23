@@ -61,7 +61,9 @@ public class Lotto {
     }
 
     private List<LottoNumber> toSortedList() {
-        return lottoNumbers.stream().sorted().collect(Collectors.toList());
+        return lottoNumbers.stream()
+            .sorted()
+            .collect(Collectors.toList());
     }
 
     @Override
